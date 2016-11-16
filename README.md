@@ -1,15 +1,14 @@
-# Howto
+# README
 
 ## Run the Tests:
 
 Move `run_tests.pl` to project root directory.
 
-Change the `$simulator_id` in `run_tests.pl` to the correct value.
-
-Run:
+Run tests:
 
 ```shell
-simulator_id={ID of iPhone simulator to use} ./run_tests.pl
+$ cd $proj_root
+$ ./run_tests.pl
 ```
 
 ## Upload Data to S3
@@ -33,5 +32,47 @@ aws_secret_access_key = YOUR_SECRET_KEY
 ### Run the Script
 
 ```shell
-./upload_to_s3.py
+$ cd $proj_root
+$ ./upload_to_s3.py
 ```
+## Work with Jenkins
+
+To work with Jenkins, you should create two Jenkins projects: one for running the tests, and another for uploading data to S3.
+
+### Testing Project
+
+Create a new free style project, and fill in the following settings:
+
+```ini
+[Source Code Management > git]
+Repository URL = https://github.com/funplus-sdk/ios-sdk-data-test.git
+Branch Specifier = */master
+
+[Build Triggers > Build periodically]
+Schedule = @hourly
+
+[Build > Execute shell]
+Command = '''
+export PATH=/usr/local/bin/:$PATH
+cd $WORKSPACE && git checkout master && git pull origin master
+./run_tests.pl
+'''
+```
+
+### Reporting Project
+
+Create a new free style project, and fill in the following settings:
+
+```ini
+[Build Triggers > Build periodically]
+Schedule = H 23 * * *
+
+[Build > Execute shell]
+Command = '''
+export PATH=/usr/local/bin/:$PATH
+cd $WORKSPACE
+git checkout master && git pull origin master
+./run_tests.pl
+'''
+```
+
