@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		286EABF31D4A6BB600519C6A /* CustomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EABF21D4A6BB600519C6A /* CustomTests.swift */; };
 		D70068371D28B1000055CCFF /* DataTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70068361D28B1000055CCFF /* DataTestAppTests.swift */; };
+		D71E77DF1DDD41E900F33306 /* FunPlusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */; };
 		D71EBBD71D032E02005F3BCC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71EBBD61D032E02005F3BCC /* Default-568h@2x.png */; };
 		D71EBBDF1D051F61005F3BCC /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71EBBDE1D051F61005F3BCC /* AccountManager.swift */; };
 		D7520E651D0040EE00436A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7520E641D0040EE00436A37 /* AppDelegate.swift */; };
@@ -19,9 +20,6 @@
 		D75B498E1D48FD0100CCB59A /* AdjustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B498C1D48FD0100CCB59A /* AdjustTests.swift */; };
 		D75B498F1D48FD0100CCB59A /* FacebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B498D1D48FD0100CCB59A /* FacebookTests.swift */; };
 		D77EAADE1DBCC86D0089EEFA /* ConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77EAADD1DBCC86D0089EEFA /* ConfigFactory.swift */; };
-		D78AEDCB1DCD8BF4002D3170 /* FunPlusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78AEDC91DCD8BEC002D3170 /* FunPlusSDK.framework */; };
-		D78AEDCC1DCD8BF4002D3170 /* FunPlusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D78AEDC91DCD8BEC002D3170 /* FunPlusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D78AEDCD1DCD8C05002D3170 /* FunPlusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D78AEDC91DCD8BEC002D3170 /* FunPlusSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +39,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D78AEDCC1DCD8BF4002D3170 /* FunPlusSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +50,7 @@
 		D70068341D28B1000055CCFF /* DataTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70068361D28B1000055CCFF /* DataTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTestAppTests.swift; sourceTree = "<group>"; };
 		D70068381D28B1000055CCFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FunPlusSDK.framework; sourceTree = "<group>"; };
 		D71EBBD61D032E02005F3BCC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D71EBBDE1D051F61005F3BCC /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		D7520E611D0040EE00436A37 /* DataTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +63,6 @@
 		D75B498C1D48FD0100CCB59A /* AdjustTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustTests.swift; sourceTree = "<group>"; };
 		D75B498D1D48FD0100CCB59A /* FacebookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookTests.swift; sourceTree = "<group>"; };
 		D77EAADD1DBCC86D0089EEFA /* ConfigFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFactory.swift; sourceTree = "<group>"; };
-		D78AEDC91DCD8BEC002D3170 /* FunPlusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FunPlusSDK.framework; path = DataTestApp/FunPlusSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78AEDCD1DCD8C05002D3170 /* FunPlusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D78AEDCB1DCD8BF4002D3170 /* FunPlusSDK.framework in Frameworks */,
+				D71E77DF1DDD41E900F33306 /* FunPlusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +100,7 @@
 		D7520E581D0040EE00436A37 = {
 			isa = PBXGroup;
 			children = (
-				D78AEDC91DCD8BEC002D3170 /* FunPlusSDK.framework */,
+				D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */,
 				D7520E631D0040EE00436A37 /* DataTestApp */,
 				D70068351D28B1000055CCFF /* DataTestAppTests */,
 				D7520E621D0040EE00436A37 /* Products */,
@@ -419,6 +415,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DataTestApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DataTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -435,6 +432,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DataTestApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DataTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
