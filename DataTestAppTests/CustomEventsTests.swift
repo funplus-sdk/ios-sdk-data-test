@@ -1,5 +1,5 @@
 //
-//  CustomTests.swift
+//  CustomEventsTests.swift
 //  DataTestApp
 //
 //  Created by FunPlus on 7/28/16.
@@ -10,7 +10,7 @@ import XCTest
 import AdSupport
 //@testable import FunPlusData
 
-class DataCustomEventTests: XCTestCase {
+class CustomEventsTests: XCTestCase {
     
 //    static let TEST_DATA_TAG = "sdk.global.sandbox"
 //    static let TEST_DATA_KEY = "0a5649c54090d1bf3d3b16467bf5a9ea"

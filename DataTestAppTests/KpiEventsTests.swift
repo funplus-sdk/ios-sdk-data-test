@@ -9,7 +9,7 @@
 import XCTest
 @testable import FunPlusSDK
 
-class DataTestAppTests: XCTestCase {
+class KpiEventsTests: XCTestCase {
 
     let TIMEOUT = 30.0
     let TIME_WAITING = 10.0

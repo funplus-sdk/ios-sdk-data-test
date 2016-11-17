@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		286EABF31D4A6BB600519C6A /* CustomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EABF21D4A6BB600519C6A /* CustomTests.swift */; };
-		D70068371D28B1000055CCFF /* DataTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70068361D28B1000055CCFF /* DataTestAppTests.swift */; };
+		286EABF31D4A6BB600519C6A /* CustomEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286EABF21D4A6BB600519C6A /* CustomEventsTests.swift */; };
+		D70068371D28B1000055CCFF /* KpiEventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70068361D28B1000055CCFF /* KpiEventsTests.swift */; };
 		D71E77E01DDD432A00F33306 /* FunPlusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */; };
 		D71E77E11DDD432A00F33306 /* FunPlusSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D71E77E41DDD44BC00F33306 /* FunPlusSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */; };
 		D71EBBD71D032E02005F3BCC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D71EBBD61D032E02005F3BCC /* Default-568h@2x.png */; };
 		D71EBBDF1D051F61005F3BCC /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71EBBDE1D051F61005F3BCC /* AccountManager.swift */; };
 		D7520E651D0040EE00436A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7520E641D0040EE00436A37 /* AppDelegate.swift */; };
@@ -18,8 +19,6 @@
 		D7520E6A1D0040EE00436A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7520E681D0040EE00436A37 /* Main.storyboard */; };
 		D7520E6C1D0040EE00436A37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7520E6B1D0040EE00436A37 /* Assets.xcassets */; };
 		D7520E6F1D0040EE00436A37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7520E6D1D0040EE00436A37 /* LaunchScreen.storyboard */; };
-		D75B498E1D48FD0100CCB59A /* AdjustTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B498C1D48FD0100CCB59A /* AdjustTests.swift */; };
-		D75B498F1D48FD0100CCB59A /* FacebookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75B498D1D48FD0100CCB59A /* FacebookTests.swift */; };
 		D77EAADE1DBCC86D0089EEFA /* ConfigFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77EAADD1DBCC86D0089EEFA /* ConfigFactory.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		286EABF21D4A6BB600519C6A /* CustomTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTests.swift; sourceTree = "<group>"; };
+		286EABF21D4A6BB600519C6A /* CustomEventsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomEventsTests.swift; sourceTree = "<group>"; };
 		D70068341D28B1000055CCFF /* DataTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D70068361D28B1000055CCFF /* DataTestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTestAppTests.swift; sourceTree = "<group>"; };
+		D70068361D28B1000055CCFF /* KpiEventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KpiEventsTests.swift; sourceTree = "<group>"; };
 		D70068381D28B1000055CCFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71E77DE1DDD41E900F33306 /* FunPlusSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FunPlusSDK.framework; sourceTree = "<group>"; };
 		D71EBBD61D032E02005F3BCC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -62,8 +61,6 @@
 		D7520E6B1D0040EE00436A37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7520E6E1D0040EE00436A37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7520E701D0040EE00436A37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D75B498C1D48FD0100CCB59A /* AdjustTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustTests.swift; sourceTree = "<group>"; };
-		D75B498D1D48FD0100CCB59A /* FacebookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookTests.swift; sourceTree = "<group>"; };
 		D77EAADD1DBCC86D0089EEFA /* ConfigFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71E77E41DDD44BC00F33306 /* FunPlusSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,10 +87,8 @@
 		D70068351D28B1000055CCFF /* DataTestAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				D75B498C1D48FD0100CCB59A /* AdjustTests.swift */,
-				D75B498D1D48FD0100CCB59A /* FacebookTests.swift */,
-				D70068361D28B1000055CCFF /* DataTestAppTests.swift */,
-				286EABF21D4A6BB600519C6A /* CustomTests.swift */,
+				D70068361D28B1000055CCFF /* KpiEventsTests.swift */,
+				286EABF21D4A6BB600519C6A /* CustomEventsTests.swift */,
 				D70068381D28B1000055CCFF /* Info.plist */,
 				D77EAADD1DBCC86D0089EEFA /* ConfigFactory.swift */,
 			);
@@ -238,11 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D75B498E1D48FD0100CCB59A /* AdjustTests.swift in Sources */,
-				D70068371D28B1000055CCFF /* DataTestAppTests.swift in Sources */,
-				286EABF31D4A6BB600519C6A /* CustomTests.swift in Sources */,
+				D70068371D28B1000055CCFF /* KpiEventsTests.swift in Sources */,
+				286EABF31D4A6BB600519C6A /* CustomEventsTests.swift in Sources */,
 				D77EAADE1DBCC86D0089EEFA /* ConfigFactory.swift in Sources */,
-				D75B498F1D48FD0100CCB59A /* FacebookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +287,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DataTestApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DataTestAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -310,6 +305,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/DataTestApp",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DataTestAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import FunPlusSDK
+import FunPlusSDK
 
 class ConfigFactory {
     
