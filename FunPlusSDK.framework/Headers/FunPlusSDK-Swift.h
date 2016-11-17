@@ -174,7 +174,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   completionHandler
   \endcode.
 */
-@property (nonatomic, copy) void (^ _Nullable sessionDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
+@property (nonatomic, copy) void (^ _Nullable sessionDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(enum NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
 /**
   Overrides default behavior for URLSessionDelegate method \code
   urlSessionDidFinishEvents(forBackgroundURLSession:)
@@ -204,7 +204,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   completionHandler
   \endcode.
 */
-@property (nonatomic, copy) void (^ _Nullable taskDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
+@property (nonatomic, copy) void (^ _Nullable taskDidReceiveChallengeWithCompletion)(NSURLSession * _Nonnull, NSURLSessionTask * _Nonnull, NSURLAuthenticationChallenge * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(enum NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable));
 /**
   Overrides default behavior for URLSessionTaskDelegate method \code
   urlSession(_:task:needNewBodyStream:)
@@ -237,7 +237,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   urlSession(_:dataTask:didReceive:completionHandler:)
   \endcode.
 */
-@property (nonatomic, copy) NSURLSessionResponseDisposition (^ _Nullable dataTaskDidReceiveResponse)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull);
+@property (nonatomic, copy) enum NSURLSessionResponseDisposition (^ _Nullable dataTaskDidReceiveResponse)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull);
 /**
   Overrides all behavior for URLSessionDataDelegate method \code
   urlSession(_:dataTask:didReceive:completionHandler:)
@@ -246,7 +246,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   completionHandler
   \endcode.
 */
-@property (nonatomic, copy) void (^ _Nullable dataTaskDidReceiveResponseWithCompletion)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(NSURLSessionResponseDisposition));
+@property (nonatomic, copy) void (^ _Nullable dataTaskDidReceiveResponseWithCompletion)(NSURLSession * _Nonnull, NSURLSessionDataTask * _Nonnull, NSURLResponse * _Nonnull, SWIFT_NOESCAPE void (^ _Nonnull)(enum NSURLSessionResponseDisposition));
 /**
   Overrides default behavior for URLSessionDataDelegate method \code
   urlSession(_:dataTask:didBecome:)
@@ -348,6 +348,36 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
 @end
 
 
+@interface SessionDelegate (SWIFT_EXTENSION(FunPlusSDK)) <NSURLSessionDelegate>
+/**
+  Tells the delegate that the session has been invalidated.
+  \param session The session object that was invalidated.
+
+  \param error The error that caused invalidation, or nil if the invalidation was explicit.
+
+*/
+- (void)URLSession:(NSURLSession * _Nonnull)session didBecomeInvalidWithError:(NSError * _Nullable)error;
+/**
+  Requests credentials from the delegate in response to a session-level authentication request from the
+  remote server.
+  \param session The session containing the task that requested authentication.
+
+  \param challenge An object that contains the request for authentication.
+
+  \param completionHandler A handler that your delegate method must call providing the disposition
+  and credential.
+
+*/
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(enum NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+/**
+  Tells the delegate that all messages enqueued for a session have been delivered.
+  \param session The session that no longer has any outstanding requests.
+
+*/
+- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
+@end
+
+
 @interface SessionDelegate (SWIFT_EXTENSION(FunPlusSDK)) <NSURLSessionDownloadDelegate>
 /**
   Tells the delegate that a download task has finished downloading.
@@ -439,36 +469,6 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
 @end
 
 
-@interface SessionDelegate (SWIFT_EXTENSION(FunPlusSDK)) <NSURLSessionDelegate>
-/**
-  Tells the delegate that the session has been invalidated.
-  \param session The session object that was invalidated.
-
-  \param error The error that caused invalidation, or nil if the invalidation was explicit.
-
-*/
-- (void)URLSession:(NSURLSession * _Nonnull)session didBecomeInvalidWithError:(NSError * _Nullable)error;
-/**
-  Requests credentials from the delegate in response to a session-level authentication request from the
-  remote server.
-  \param session The session containing the task that requested authentication.
-
-  \param challenge An object that contains the request for authentication.
-
-  \param completionHandler A handler that your delegate method must call providing the disposition
-  and credential.
-
-*/
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-/**
-  Tells the delegate that all messages enqueued for a session have been delivered.
-  \param session The session that no longer has any outstanding requests.
-
-*/
-- (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession * _Nonnull)session;
-@end
-
-
 @interface SessionDelegate (SWIFT_EXTENSION(FunPlusSDK)) <NSURLSessionDataDelegate>
 /**
   Tells the delegate that the data task received the initial reply (headers) from the server.
@@ -483,7 +483,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   should become a download task.
 
 */
-- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(NSURLSessionResponseDisposition))completionHandler;
+- (void)URLSession:(NSURLSession * _Nonnull)session dataTask:(NSURLSessionDataTask * _Nonnull)dataTask didReceiveResponse:(NSURLResponse * _Nonnull)response completionHandler:(void (^ _Nonnull)(enum NSURLSessionResponseDisposition))completionHandler;
 /**
   Tells the delegate that the data task was changed to a download task.
   \param session The session containing the task that was replaced by a download task.
@@ -554,7 +554,7 @@ SWIFT_CLASS("_TtC10FunPlusSDK15SessionDelegate")
   and credential.
 
 */
-- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
+- (void)URLSession:(NSURLSession * _Nonnull)session task:(NSURLSessionTask * _Nonnull)task didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(enum NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
 /**
   Tells the delegate when a task requires a new request body stream to send to the remote server.
   \param session The session containing the task that needs a new body stream.
